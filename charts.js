@@ -154,6 +154,8 @@ function buildCharts(sample) {
     //console.log(otuLabels);
     var sampleValues = firstSample.sample_values;
     //console.log(sampleValues);
+
+    //Plotly.newPlot();
     
     // 1. Create the trace for the bubble chart.
     var bubbleData = {
@@ -163,8 +165,8 @@ function buildCharts(sample) {
       y: sampleValues,
       text: otuLabels,
       marker: {
-        color: otuIds,
-        size: sampleValues,
+        color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
+        size: [40, 60, 80, 100]
       }    
     };
       
