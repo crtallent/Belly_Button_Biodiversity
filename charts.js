@@ -138,48 +138,48 @@ function buildCharts(sample) {
 //      var otuLabelsB = firstSampleB.otu_labels;
 //      //console.log(otuLabelsB);
 //      var sampleValuesB = firstSampleB.sample_values;
-function buildCharts(sample) {
-  d3.json("samples.json").then((data) => {
-    var samples = data.samples;
-    //console.log(samples);
+// function buildCharts(sample) {
+//   d3.json("samples.json").then((data) => {
+//     var samples = data.samples;
+//     //console.log(samples);
 
-    var samplesArray = samples.filter(sampleObj => sampleObj.id == sample);
-    //console.log(samplesArray);
+//     var samplesArray = samples.filter(sampleObj => sampleObj.id == sample);
+//     //console.log(samplesArray);
 
-    var firstSample = samplesArray[0]; 
-    //console.log(firstSample);
-    var otuIds = firstSample.otu_ids;
-    //console.log(otuIds);
-    var otuLabels = firstSample.otu_labels;
-    //console.log(otuLabels);
-    var sampleValues = firstSample.sample_values;
-    //console.log(sampleValues);
+//     var firstSample = samplesArray[0]; 
+//     //console.log(firstSample);
+//     var otuIds = firstSample.otu_ids;
+//     //console.log(otuIds);
+//     var otuLabels = firstSample.otu_labels;
+//     //console.log(otuLabels);
+//     var sampleValues = firstSample.sample_values;
+//     //console.log(sampleValues);
 
-    //Plotly.newPlot();
+//     //Plotly.newPlot();
     
-    // 1. Create the trace for the bubble chart.
-    var bubbleData = {
-      type: "scatter",
-      mode: "markers",
-      x: otuIds,
-      y: sampleValues,
-      text: otuLabels,
-      marker: {
-        color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
-        size: [40, 60, 80, 100]
-      }    
-    };
+//     // 1. Create the trace for the bubble chart.
+//     var bubbleData = {
+//       type: "scatter",
+//       mode: "markers",
+//       x: otuIds,
+//       y: sampleValues,
+//       text: otuLabels,
+//       marker: {
+//         color: otuIds,
+//         size: sampleValues
+//       }    
+//     };
       
-    // 2. Create the layout for the bubble chart.
-    var bubbleLayout = {
-      title: "Bacteria Cultures Per Sample",  
-    };
+//     // 2. Create the layout for the bubble chart.
+//     var bubbleLayout = {
+//       title: "Bacteria Cultures Per Sample",  
+//     };
 
-    // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+//     // 3. Use Plotly to plot the data with the layout.
+//     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
     
-  });
-}  
+//   });
+// }  
 
 // // // Create the buildChart function.
 // // function buildCharts(sample) {
