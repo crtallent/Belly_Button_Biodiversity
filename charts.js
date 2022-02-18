@@ -117,69 +117,66 @@ function buildCharts(sample) {
   });
 
 }
-// // Bar and Bubble charts
-// // Create the buildCharts function.
-// function buildCharts(sample) {
+// Bar and Bubble charts
+// Create the buildCharts function.
+function buildCharts(sample) {
   
-//   // Use d3.json to load and retrieve the samples.json file 
-//   d3.json("samples.json").then((data) => {
-//     var samples = data.samples;
+  // Use d3.json to load and retrieve the samples.json file 
+  d3.json("samples.json").then((data) => {
+    var samples = data.samples;
     
-//     var samplesArrayB = samples.filter(sampleObj => sampleObj.id == sample);
-//     //console.log(samplesArrayB);
+    var samplesArray = samples.filter(sampleObj => sampleObj.id == sample);
+    //console.log(samplesArray);
   
          
-//     //  5. Create a variable that holds the first sample in the array.
-//     var firstSampleB = samplesArrayB[0];
-//     //console.log(firstSampleB);
+    //  5. Create a variable that holds the first sample in the array.
+    var firstSample = samplesArray[0];
+    //console.log(firstSampleB);
     
-//     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-//      var otuIdsB = firstSampleB.otu_ids;
-//      var otuLabelsB = firstSampleB.otu_labels;
-//      //console.log(otuLabelsB);
-//      var sampleValuesB = firstSampleB.sample_values;
-// function buildCharts(sample) {
-//   d3.json("samples.json").then((data) => {
-//     var samples = data.samples;
-//     //console.log(samples);
+    // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
+     var otuIds = firstSample.otu_ids;
+     var otuLabels = firstSample.otu_labels;
+     //console.log(otuLabelsB);
+     var sampleValues = firstSample.sample_values;
 
-//     var samplesArray = samples.filter(sampleObj => sampleObj.id == sample);
-//     //console.log(samplesArray);
+    //  var bubble = document.getElementById("bubble");
 
-//     var firstSample = samplesArray[0]; 
-//     //console.log(firstSample);
-//     var otuIds = firstSample.otu_ids;
-//     //console.log(otuIds);
-//     var otuLabels = firstSample.otu_labels;
-//     //console.log(otuLabels);
-//     var sampleValues = firstSample.sample_values;
-//     //console.log(sampleValues);
-
-//     //Plotly.newPlot();
-    
-//     // 1. Create the trace for the bubble chart.
-//     var bubbleData = {
-//       type: "scatter",
-//       mode: "markers",
-//       x: otuIds,
-//       y: sampleValues,
-//       text: otuLabels,
-//       marker: {
-//         color: otuIds,
-//         size: sampleValues
-//       }    
-//     };
+//       
+    // 1. Create the trace for the bubble chart.
+    // var bubbleData = {
+    //   type: "scatter",
+    //   mode: "markers",
+    //   x: otuIds,
+    //   y: sampleValues,
+    //   text: otuLabels,
+    //   marker: {
+    //     color: otuIds,
+    //     size: sampleValues
+    //   }    
+    // };
       
-//     // 2. Create the layout for the bubble chart.
-//     var bubbleLayout = {
-//       title: "Bacteria Cultures Per Sample",  
-//     };
+    var bubbleData = {
+      datasets: [{
+        label: ["Bacteria Cultures Per Sample"],
+        data: [{
+          x: otuIds,
+          y: sampleValues,
+          r: sampleValues,
+          text: otuLabels
+        }]
+      }]
+    }
+    // 2. Create the layout for the bubble chart.
+    var bubbleLayout = {
+      type: "bubble",
+      data: bubbleData  
+    };
 
-//     // 3. Use Plotly to plot the data with the layout.
-//     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+    // 3. Use Plotly to plot the data with the layout.
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
     
-//   });
-// }  
+  });
+}  
 
 // // // Create the buildChart function.
 // // function buildCharts(sample) {
