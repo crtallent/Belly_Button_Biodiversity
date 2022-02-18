@@ -138,27 +138,46 @@ function buildCharts(sample) {
 //      var otuLabelsB = firstSampleB.otu_labels;
 //      //console.log(otuLabelsB);
 //      var sampleValuesB = firstSampleB.sample_values;
-     
-    
-//     // 1. Create the trace for the bubble chart.
-//     var bubbleData = {
-//       x: otuIds,
-//       y: sampleValues,
-//       text: otuLabels,
-//       mode: "markers",
-//       marker: {
-//         color: otuIds,
-//         size: sampleValues
-//       }      
-//     };
-   
-//       // 2. Create the layout for the bubble chart.
-//     var bubbleLayout = {
-//       title: "Bacteria Cultures Per Sample",  
-//     };
+function buildCharts(sample) {
+  d3.json("samples.json").then((data) => {
+    var samples = data.samples;
+    //console.log(samples);
 
-//     // 3. Use Plotly to plot the data with the layout.
-//     Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
+    var samplesArray = samples.filter(sampleObj => sampleObj.id == sample);
+    //console.log(samplesArray);
+
+    var firstSample = samplesArray[0]; 
+    //console.log(firstSample);
+    var otuIds = firstSample.otu_ids;
+    //console.log(otuIds);
+    var otuLabels = firstSample.otu_labels;
+    //console.log(otuLabels);
+    var sampleValues = firstSample.sample_values;
+    //console.log(sampleValues);
+    
+    // 1. Create the trace for the bubble chart.
+    var bubbleData = {
+      type: "scatter",
+      mode: "markers",
+      x: otuIds,
+      y: sampleValues,
+      text: otuLabels,
+      marker: {
+        color: otuIds,
+        size: sampleValues,
+      }    
+    };
+      
+    // 2. Create the layout for the bubble chart.
+    var bubbleLayout = {
+      title: "Bacteria Cultures Per Sample",  
+    };
+
+    // 3. Use Plotly to plot the data with the layout.
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+    
+  });
+}  
 
 // // // Create the buildChart function.
 // // function buildCharts(sample) {
