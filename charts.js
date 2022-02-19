@@ -72,9 +72,9 @@ function buildCharts(sample) {
     
     
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-     const otuIds = firstSample.otu_ids;
-     const otuLabels = firstSample.otu_labels;
-     const sampleValues = firstSample.sample_values;
+    const otuIds = firstSample.otu_ids;
+    const otuLabels = firstSample.otu_labels;
+    const sampleValues = firstSample.sample_values;
      
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -114,9 +114,9 @@ function buildCharts(sample) {
     // 10. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bar", barData, barLayout); 
     
-  });
+  // });
 
-}
+
 // Bar and Bubble charts
     
     // 1. Create the trace for the bubble chart.
@@ -142,7 +142,8 @@ function buildCharts(sample) {
 
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
-    
+  });  
+}  
 //     // // Create a variable that holds the metadata array. 
 //     var meta = data.metadata;
 //     //console.log(meta);
