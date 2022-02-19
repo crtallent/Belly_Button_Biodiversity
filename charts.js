@@ -142,52 +142,57 @@ function buildCharts(sample) {
 
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
-  });  
-}  
-//     // // Create a variable that holds the metadata array. 
-//     var meta = data.metadata;
-//     //console.log(meta);
-
-//     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
-//     var metaArray = metadata.filter(metadataObj => metadataObj.id == sample);
+  //});  
+//}  
+    // 1. Create a variable that filters the metadata array for the object with the desired sample number.
+    var metadata = data.metadata;
+    var metadataArray = metadata.filter(i => i.id == sample);
+    //console.log(metadataArray);
     
-//     console.log(metaArray);
-    
-//     // // Create a variable that holds the first sample in the array.
-//     // var firstSampleG = samplesArrayG[0];
-//     // console.log(firstSampleG);
+    // Create a variable that holds the first sample in the array.
+    var firstSampleG = metadataArray[0];
+    //console.log(firstSampleG);
 
-// //     // // 2. Create a variable that holds the first sample in the metadata array.
-// //     // var firstSampleGauge = metadataArrayG[0];
-// //     // console.log(firstSampleGauge);
+    // Create var to hold washing frequency
+    // Assign via values property (obj.wfreq)
+    var wFreq = firstSampleG.wfreq;
+    console.log(wFreq);
+  
+    // 4. Create the trace for the gauge chart.
+    var gaugeData = [
+                  {
+                    value: wFreq,
+                    title: { text: "Belly Button Washing Frequency" },
+                    type: "indicator",
+                    mode: "gauge+number",
+                    gauge: {
+                      axis: { range: [0, 10] },
+                      steps: [
+                        { range: [0,2], color: "red"},
+                        { range: [2,4], color: "yellow"},
+                        { range: [4,6], color: "orange"},
+                        { range: [6,8], color: "lime"},
+                        { range: [8,10], color: "green"}
+                      ],
+                      threshold: {
+                        line: { color: "black", width: 4 },
+                        thickness: 0.75,
 
-// //     // // Create variables that hold the otu_ids, otu_labels, and sample_values.
-// //     //  var otuIdsG = firstSampleG.otu_ids;
-// //     //  //console.log(otuIdsG);
-// //     //  var otuLabelsG = firstSampleG.otu_labels;
-// //     //  //console.log(otuLabelsG);
-// //     //  var sampleValuesG = firstSampleG.sample_values;
-// //     //  //console.log(sampleValuesG);
+                      }
 
-// //     // Create var to hold washing frequency
-// //     var metadata = data.metadata;
-// //     console.log(metadata);
-
-// //     // var wash = metadata[] 
-    
-// //     // 4. Create the trace for the gauge chart.
-// //     var gaugeData = [
+                    }
+                  }
      
-// //     ];
+    ];
     
-// // // //     // 5. Create the layout for the gauge chart.
-// //     var gaugeLayout = { 
+// //     // 5. Create the layout for the gauge chart.
+    var gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0}
      
-// //     };
+    };
 
 
-// // // //     // 6. Use Plotly to plot the gauge data and layout.
-// //      Plotly.newPlot();
+// //     // 6. Use Plotly to plot the gauge data and layout.
+     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
 
-//    });
-// } 
+  });
+} 
