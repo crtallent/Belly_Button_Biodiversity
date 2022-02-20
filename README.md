@@ -15,7 +15,7 @@ The interactive charts can be assessed [here](https://crtallent.github.io/Belly_
 
 ## Belly_Button_Biodiversity Results
 
-This webpage features a bar chart, which will allow the participants to select their ID from a dropdown box
+This webpage features a bar chart, which will allow the participants to select their ID from a dropdown box to see if they are a candidate for selling their samples to Improbable Beef.  Included in the bubble chart titled, "Bacteria Cultures Per Sample", a participant can easily identify their OTUs by hovering over the bubbles.  An additional gauge chart is included that identifies how many times a participant washes their navel titled, "Belly Button Washing Frequency".
 
 
 
