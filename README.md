@@ -17,8 +17,15 @@ The interactive charts can be assessed [here](https://crtallent.github.io/Belly_
 
 This webpage features a bar chart, which will allow the participants to select their ID from a dropdown box to see if they are a candidate for selling their samples to Improbable Beef.  Included in the bubble chart titled, "Bacteria Cultures Per Sample", a participant can easily identify their OTUs by hovering over the bubbles.  An additional gauge chart is included that identifies how many times a participant washes their navel titled, "Belly Button Washing Frequency".
 
+## Belly_Button_Biodiversity Customization
+
+The following customizations were added to the dashboard:
+
+* A background image was added to the Jumbotron
+* The background color of the body was changed from white
+* The font "cursive" was used in white in the Jumbotron to allow for readability after adding the image
+* The text color was changed to green in the participant panel
 
 
-
-
+Citation:
 Operational Taxonomic Unit (OTU) and Otu Clustering. Operational Taxonomic Unit (OTU) and OTU Clustering - CD Genomics. (2022). Retrieved February 20, 2022, from https://www.cd-genomics.com/microbioseq/operational-taxonomic-unit-otu-and-otu-clustering.html#:~:text=Operational%20taxonomic%20unit%20or%20OTU,species%2C%20genus%2C%20or%20class.&amp;text=OTUs%20or%20clusters%20with%20sequence,unit%20used%20in%20microbial%20ecology. 
