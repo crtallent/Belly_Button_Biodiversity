@@ -8,6 +8,14 @@ The interactive charts can be assessed [here](https://crtallent.github.io/Belly_
 
 
 
+## Resources
+
+- Software: JavaScript 1.7
+
+## Belly_Button_Biodiversity Results
+
+This webpage features a bar chart, which will allow the participants to select their ID from a dropdown box
+
 
 
 
