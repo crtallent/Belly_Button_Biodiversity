@@ -6,7 +6,7 @@ For this task, a leading company, Improbable Beef, is looking to find a non-meat
 
 The interactive charts can be assessed [here](https://crtallent.github.io/Belly_Button_Biodiversity/).
 
-
+<img src="https://github.com/crtallent/Belly_Button_Biodiversity/blob/main/static/images/Webpage.png" />
 
 ## Resources
 
